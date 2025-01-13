@@ -3,7 +3,6 @@ const { body, query, validationResult  } = require('express-validator');
 const RentalController = require('../controllers/rentalController');
 const router = express.Router();
 
-// Middleware to handle validation errors
 const handleValidationErrors = (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -12,7 +11,7 @@ const handleValidationErrors = (req, res, next) => {
   next();
 };
 
-// Book Car Rental
+router.get('/available', RentalController.viewAvailableCars);
 router.post(
   '/book',
   [
@@ -26,7 +25,6 @@ router.post(
   RentalController.bookCarRental
 );
 
-// View Rental Details
 router.get(
   '/details',
   [
@@ -36,10 +34,8 @@ router.get(
   RentalController.viewRentalDetails
 );
 
-// View All Rentals
 router.get('/all', RentalController.viewAllRentals);
 
-// Cancel Car Rental
 router.post(
   '/cancel',
   [
@@ -50,7 +46,6 @@ router.post(
   RentalController.cancelCarRental
 );
 
-// Modify Rental Duration
 router.put(
   '/modify',
   [

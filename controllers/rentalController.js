@@ -7,6 +7,12 @@ const cars = [
 const rentals = [];
 
 class RentalController {
+
+    static async viewAvailableCars(req, res, next) {
+        const availableCars = cars.filter((c) => c.is_available);
+        res.json({ availableCars });
+    }
+
     static async bookCarRental(req, res) {
         const { name, email, car_model, start_date, end_date } = req.body;
 
