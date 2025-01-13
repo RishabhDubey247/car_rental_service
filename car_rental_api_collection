@@ -12,12 +12,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/rentals/details?email=rishabhdubey247@gmail.com",
-					"protocol": "http",
+					"raw": "https://car-rental-service-n10c.onrender.com/api/rentals/details?email=rishabhdubey247@gmail.com",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"car-rental-service-n10c",
+						"onrender",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"rentals",
@@ -101,16 +102,27 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/rentals/all",
-					"protocol": "http",
+					"raw": "https://car-rental-service-n10c.onrender.com/api/rentals/all?email&car_model",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"car-rental-service-n10c",
+						"onrender",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"rentals",
 						"all"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": null
+						},
+						{
+							"key": "car_model",
+							"value": null
+						}
 					]
 				}
 			},
@@ -178,12 +190,13 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/rentals/cancel",
-					"protocol": "http",
+					"raw": "https://car-rental-service-n10c.onrender.com/api/rentals/cancel",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"car-rental-service-n10c",
+						"onrender",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"rentals",
@@ -198,17 +211,34 @@
 			"request": {
 				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"\",\r\n    \"new_start_date\" : \"\",\r\n    \"new_end_date\" : \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:3000/api/rentals/modify",
-					"protocol": "http",
+					"raw": "https://car-rental-service-n10c.onrender.com/api/rentals/modify",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"car-rental-service-n10c",
+						"onrender",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"rentals",
 						"modify"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": null,
+							"disabled": true
+						}
 					]
 				}
 			},
@@ -229,12 +259,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/rentals/book",
-					"protocol": "http",
+					"raw": "https://car-rental-service-n10c.onrender.com/api/rentals/book",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"car-rental-service-n10c",
+						"onrender",
+						"com"
 					],
-					"port": "3000",
 					"path": [
 						"api",
 						"rentals",

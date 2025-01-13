@@ -19,8 +19,8 @@ router.post(
     body('name').notEmpty().withMessage('Name is required.'),
     body('email').isEmail().withMessage('Valid email is required.'),
     body('car_model').notEmpty().withMessage('Car model is required.'),
-    body('start_date').isISO8601().withMessage('Valid start date is required.'),
-    body('end_date').isISO8601().withMessage('Valid end date is required.'),
+    body('start_date').matches(/^([0-2][0-9]|(3)[0-1])\/(0[1-9]|1[0-2])\/(\d{4})$/).withMessage('Valid start date is required.'),
+    body('end_date').matches(/^([0-2][0-9]|(3)[0-1])\/(0[1-9]|1[0-2])\/(\d{4})$/).withMessage('Valid end date is required.'),
     handleValidationErrors,
   ],
   RentalController.bookCarRental
@@ -55,8 +55,8 @@ router.put(
   '/modify',
   [
     body('email').isEmail().withMessage('Valid email is required.'),
-    body('new_start_date').isISO8601().withMessage('Valid new start date is required.'),
-    body('new_end_date').isISO8601().withMessage('Valid new end date is required.'),
+    body('new_start_date').matches(/^([0-2][0-9]|(3)[0-1])\/(0[1-9]|1[0-2])\/(\d{4})$/).withMessage('Valid new start date is required.'),
+    body('new_end_date').matches(/^([0-2][0-9]|(3)[0-1])\/(0[1-9]|1[0-2])\/(\d{4})$/).withMessage('Valid new end date is required.'),
     handleValidationErrors,
   ],
   RentalController.modifyRentalDuration
